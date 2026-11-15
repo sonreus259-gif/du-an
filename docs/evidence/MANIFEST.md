@@ -18,3 +18,6 @@ Mỗi thư mục ghi rõ chụp tại revision nào. **Chỉ `f1/` phản ánh b
 
 ## f2 — bằng chứng cho revision `54f3739` (16/11, chạy local, desktop 1440 px, reduced-motion bật)
 `docs/evidence/f2/`: d-home, d-projects, d-lms, d-xaydung, d-chuyenmon, d-ketoan, d-gioithieu. Thay thế `f1/` làm bằng chứng HEAD. Chưa có bản mobile lưu tệp (đã đo không tràn ngang ở 375 px bằng số) và chưa chụp 3 dự án còn lại.
+
+## f3 — bổ sung cho bản đã deploy (main 368427d, 16/11, chạy local, reduced-motion bật)
+`docs/evidence/f3/`: mobile 390 px (khung iframe) cho 10 trang — home, projects, lms, xaydung, tuyendung, banhang, tuvan, chuyenmon, ketoan, gioithieu; desktop 1440 px cho 3 dự án còn lại. Ảnh dự án LMS/xây dựng là screenshot thật đã che trắng hình học (xuất WebP lossy, không gọi là pixel-exact). Chưa có: menu mobile mở, tải lại URL chi tiết trên Pages thật bằng trình duyệt.

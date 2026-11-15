@@ -1,4 +1,4 @@
-// Che trắng pixel-exact (hình chữ nhật trắng thuần, không blur, không tái tạo nội dung) lên ảnh chụp thật.
+// Che trắng hình học (hình chữ nhật trắng thuần, không blur, không tạo lại nội dung) lên ảnh chụp thật. Xuất WebP lossy nên không gọi là pixel-exact.
 // Nguồn: thư mục kênh chung (không commit). Kết quả: src/assets/projects/*.webp (chỉ bản đã che).
 // Dùng: node scripts/redact-screens.mjs <thư mục nguồn BA_PORTFOLIO/assets> [--preview <thư mục>]
 import sharp from 'sharp';
