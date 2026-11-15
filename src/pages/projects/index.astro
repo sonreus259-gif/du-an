@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Scene from '../../components/Scene.astro';
+import { Image } from 'astro:assets';
+import { projectImages } from '../../data/media';
 import Journey from '../../components/Journey.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
 import ZaloButton from '../../components/ZaloButton.astro';
@@ -27,9 +28,9 @@ const solutions = getSolutions().filter((i) => projects.some((p) => p.solutionId
         </div>
       </div>
       <div class="hero-scene reveal" style="--d:2">
-        <div class="hs main"><Scene kind="funnel" depths={[-0.2, 0.3, 0.9]} /></div>
-        <div class="hs side-a"><Scene kind="chat" layers={['l1', 'l2']} depths={[0, 0.6, 1.1]} /></div>
-        <div class="hs side-b"><Scene kind="lms" layers={['l1']} depths={[0, 0.9, 0]} /></div>
+        <figure class="hs main" data-depth="0.5"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><Image src={projectImages['cons-1']} alt="Màn hình tổng quan điều hành của hệ thống quản trị dự án xây dựng" widths={[360, 540, 720]} sizes="(max-width: 860px) 60vw, 420px" format="webp" quality={80} loading="eager" /></figure>
+        <figure class="hs side-a" data-depth="1.1"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><Image src={projectImages['lms-1']} alt="Màn hình tổng quan học tập của hệ thống LMS doanh nghiệp" widths={[360, 540, 720]} sizes="300px" format="webp" quality={80} loading="eager" /></figure>
+        <figure class="hs side-b" data-depth="1.6"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><Image src={projectImages['lms-3']} alt="Màn hình tổng quan quản trị đào tạo theo kỳ báo cáo" widths={[360, 540, 720]} sizes="260px" format="webp" quality={80} loading="eager" /></figure>
       </div>
     </div>
   </section>
@@ -115,11 +116,14 @@ const solutions = getSolutions().filter((i) => projects.some((p) => p.solutionId
   .hero-copy { padding-bottom: 8px; }
   .lead { font-size: 15.5px; color: #2f3b54; max-width: 46ch; }
   .cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
-  .hero-scene { position: relative; height: 330px; }
-  .hs { position: absolute; }
-  .hs.main { right: 0; top: 44px; width: min(100%, 500px); }
-  .hs.side-a { left: -4%; bottom: -8%; width: 56%; }
-  .hs.side-b { right: 2%; bottom: -14%; width: 40%; }
+  .hero-scene { position: relative; height: 360px; }
+  .hs { position: absolute; margin: 0; border-radius: 12px; overflow: hidden; background: #fff; border: 1px solid rgba(11,20,36,.12); box-shadow: 0 18px 44px rgba(11,20,36,.2); }
+  .hs .bar { display: flex; gap: 5px; padding: 7px 10px; background: #eef2f8; border-bottom: 1px solid rgba(11,20,36,.08); }
+  .hs .bar i { width: 7px; height: 7px; border-radius: 50%; background: #c3cddd; }
+  .hs :global(img) { display: block; width: 100%; height: auto; }
+  .hs.main { right: 0; top: 0; width: min(100%, 430px); }
+  .hs.side-a { left: 0; bottom: 14px; width: 56%; }
+  .hs.side-b { right: 4%; bottom: 8px; width: 42%; }
   .scene-note { position: absolute; right: 0; bottom: -34px; margin: 0; font-size: 12px; color: #3b4863; }
 
   /* THANH TÌM — nổi lên chồng mép hero */
